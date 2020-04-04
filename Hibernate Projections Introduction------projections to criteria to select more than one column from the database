@@ -1,0 +1,22 @@
+
+ we are able to load complete object right….! let us see how to load the partial objects while working with criteria.
+ The projections concept is introduced in hibernate 3.0 and mainly we can do the following 2 operations using the projection
+ We can load partial object from the database
+We can find the Result of Aggregate functions
+Projection is an Interface given in “org.hibernate.criterion” package, Projections is an class given in same package,
+actually Projection is an interface, and Projections is an class and is a factory for producing projection objects.
+
+In Projections class, we have all static methods and each method of this class returns Projection interface object.
+If we want to add a Projection object to Criteria then we need to call a method setProjection()
+
+Remember, while adding projection object to criteria, it is possible to add one object at a time.
+It means if we add 2nd projection object then this 2nd one will overrides the first one (first one wont be work), 
+so at a time we can only one projection object to criteria object.
+
+Using criteria, if we want to load partial object from the database, 
+then we need to create a projection object for property that is to be loaded from the database
+Here collections list l, is going to contain the price in the form of Double objects, but product names are over ridden,  
+second projection over rides the first one,
+i mean p2 only will works p1 will not works,
+actually there is a way to add multiple projections to criteria to select more than one column from the database 
+i will tell you in the next example 🙂
